@@ -1,0 +1,93 @@
+{% load static %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    
+    <link rel="stylesheet" href="{% static 'blog/css/normalize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/fontawesome/all.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/21e27f907e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+
+    {% if title %}
+    <title>Django Blog - {{ title }}</title>
+    {% else %}
+    <title>Django Blog</title>
+    {% endif %}
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-head" id="header_img_container">
+                <div class="bottom"><div><a href="/" class="text">Andrzej Białecki</a></div></div>
+                <a href="/"><img class="logo overlay" src="{% static 'blog/img/kaszanas_logo.png' %}" alt="logo"></a>
+        </header>
+
+        <nav class="main-nav">
+            <ul class="main-nav__menu">
+                <li class="main-nav__item"><a href="/bio" class="main-nav__link">Bio</a></li>
+                <li class="main-nav__item"><a href="/interviews" class="main-nav__link">Interviews</a></li>
+                <li class="main-nav__item"><a href="" class="main-nav__link">Projects</a></li>
+            </ul>
+        </nav>
+        <nav class="social-nav">
+            <ul class="social-nav__menu">
+                <li class="main-nav__social-item"><a href="https://github.com/Kaszanas" class="main-nav__social-link" target="_blank"><i class="fab fa-github"></i></a></li>
+                <li class="main-nav__social-item"><a href="https://twitter.com/Kaszanas" class="main-nav__social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                <li class="main-nav__social-item"><a href="https://www.linkedin.com/in/andrzej-bialecki/" class="main-nav__social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                <li class="main-nav__social-item"><a href="https://www.instagram.com/kaszanas/" class="main-nav__social-link" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li class="main-nav__social-item"><a href="https://www.facebook.com/Kaszanas/" class="main-nav__social-link" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="main-nav__social-item"><a href="https://www.youtube.com/channel/UCeaPyWp3NI6nqBwqEnNj50w" class="main-nav__social-link" target="_blank"><i class="fab fa-youtube"></i></a></li></li>
+            </ul>
+        </nav>
+        
+
+        <main class="content">
+            <article class="article">
+
+                {% block content %}
+                {% endblock%}
+
+            </article>
+        </main>
+        <aside class="side"></aside>
+        <div class="ad"></div>
+        
+        <footer class="main-footer">Andrzej Białecki 2020</footer>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
