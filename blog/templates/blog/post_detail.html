@@ -20,8 +20,6 @@
                 <a class="post-similar__link" href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
         </div>
 
-
-
     {% empty %}
         <p> Nie ma podobnych postów </p>
     {% endfor %}

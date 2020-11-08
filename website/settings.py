@@ -3,7 +3,7 @@ import socket
 
 from django.core.management.utils import get_random_secret_key
 
-from decouple import config
+from decouple import config, Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -136,3 +136,6 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+
+# Directory which will hold collectstatic files
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
