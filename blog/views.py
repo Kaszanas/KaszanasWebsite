@@ -47,5 +47,5 @@ class PostDetailView(DetailView):
 def bio(request):
     return render(request, 'blog/bio.html', {'title': 'About'})
 
-def interviews(request):
-    return render(request, 'blog/interviews.html')
+def projects(request):
+    return render(request, 'blog/projects.html')
